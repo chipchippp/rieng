@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/product.css">
+    <title>Document</title>
+    <style>
+        /* giao dien thanh toasn */
+:root{
+    --main-text-font: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-family: sans-serif;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.product{
+    padding: 10px 50px;
+    padding-top: 40px;
+}
+
+.product-content-left{
+   width: 40%;
+}
+.product-content-left-big-img{
+    width: 100%;
+    padding-right: 5px;
+    border-radius: 5px;
+}
+.product-content-left-big-img img{
+    width: 600px;
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+.product-content-left-small-img {
+    width: 48.5%;
+    display: flex;
+    border-radius: 5px;
+    max-width: 100%;
+    max-height: 100%;
+
+}
+.product-content-left-small-img img{
+    width: 100%;
+    margin: 0 5px; 
+    border-radius: 5px;
+}
+.product-content-right{
+    width: 40%;
+    padding-left: 150px; 
+}
+.product-content-right-product-name h1{
+    font-family: var(--main-text-font);
+    font-size: 18px;
+}
+.product-content-right-product-name p{
+    color: #3a3e4f;;
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+.product-content-right-product-price{
+    margin: 12px 0;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: var(--main-text-font);
+}
+
+.size button{
+    display: inline-block;
+    padding: 3px 6px;
+    border: 1px solid #a9a6a6;
+    font-size:12px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+.size button:hover{
+    background-color: black;
+    color: white;
+}
+.quantity{
+    display: flex;
+    margin: 30px 0;
+}
+.quantity input{
+    width: 35px;
+    padding-left: 8px;
+    height: 32px;
+    position: relative;
+    bottom: 10px;
+}
+.product-content-right-product-button button{
+    width: 150px;
+    height: 60px;
+    display: block;
+    margin: 20px 0 12px;
+    transition: all 0.4s ease;
+    border-radius: 5px;
+}
+
+.product-content-right-product-button button:first-child{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid black;
+    cursor: pointer;
+}
+.product-content-right-product-button button:first-child:hover{
+    background-color: black;
+    color: #fff;
+}
+.product-content-right-product-button button:last-child{
+    border: 2px solid black;
+    color: black;
+    background-color: #fff;
+    cursor: pointer;
+}
+.product-content-right-product-button button:last-child:hover{
+    background-color: black;
+    color: #fff;
+}
+.product-content-right-product-icon{
+    padding: 12px;
+}
+.product-content-right-product-icon-item{
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 12px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+/* .product-content-right-product-icon-item i{
+    font-size: 12.5px;
+    margin-left: 6px;
+} */
+.product-content-right-product-bottom{
+    padding-top: 40px;
+    border-top: 1px solid #dddddd;
+    position: relative;
+    
+}
+.product-content-right-product-bottom-top{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #dddddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    top: -15px;
+    left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+.product-content-right-product-bottom-content-title{
+    border-bottom: 2px solid #dddddd;
+}
+.product-content-right-product-bottom-content-title-item{
+    padding: 6px;
+    cursor: pointer;
+    margin-right: 6px;
+    font-size: 14px;
+}
+
+.product-content-right-product-bottom-content{
+    padding-top: 30px;
+}
+.product-content-right-product-bottom-content {
+    font-family: var(--main-text-font);
+    font-size: 16px;
+}
+.product-content-right-product-bottom-content-details{
+    display: none;
+}
+.activeB{
+    display: none;
+}
+
+/* asdasdasdasdasdasdasdasd */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@300;400;500;700&display=swap');
+
+.headline{
+    text-align: center;
+    margin: 40px 0px;
+}
+.khung-item{
+    font-size: 18px;
+    color: #111;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    color: #555;
+    font-weight: 60px;
+    border-radius: 4px;
+}
+ul.products{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+ul.products li{
+    flex-basis: 25%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    margin-bottom: 30px ;
+}
+ul.products li img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+/* mua ngay*/
+ul.products li .product-top{
+    position: relative;
+    overflow: hidden;
+
+}
+ul.products li .product-top .product-thumb{
+    display: block;
+}
+ul.products li:hover .product-top .product-thumb img{
+    filter: opacity(80%);
+}
+ul.products li .product-top .product-thumb img{
+    display: block;
+}
+ul.products li .product-top a.buy-now{
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    background-color: #446084;
+    color: #fff;
+    padding: 10px 0px;
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+    transition: 0.5s ease-in-out;
+    opacity: 0.85;
+}
+ul.products li:hover a.buy-now{
+    bottom: 0px;
+}
+ul.products li .product-info{
+    padding: 10px 0px;
+
+}
+ul.products li .product-info a{
+    display: block;
+    text-decoration: none;
+}
+ul.products li .product-info a.product-cat{
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #9e9e9e;
+    padding: 3px 0px;
+}
+ul.products li .product-info a.product-name{
+    color: #334862;
+    padding: 3px 0px;
+}
+ul.products li .product-info .product-price{
+    color: #111;
+    padding: 2px 0px;
+    font-weight: 600;
+}
+
+.quantity input {
+    margin-left: 20px;
+    margin-top: 6px;
+}
+
+.product-content-right-product-bottom-content-title-item h1:hover {
+    color: #666;
+}
+
+/* phan chon size */
+
+.size-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    color: black;
+    font-weight: 600;
+}
+
+.size button {
+    margin:30px 0;
+    margin-left: 35px;
+}
+
+.size-button.selected {
+  background-color: black;
+  color: white;
+  font-weight: 600;
+}
+
+/* phan xem full man hinh */
+
+    /* Phần style cho modal */
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 20px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Phần style cho ảnh trong modal */
+.modal-content {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  display: block;
+}
+
+/* Phần style cho nút đóng */
+.close {
+  color: #fff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* phan cuoi end */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.bottom__end {
+    text-align: center;
+    max-width: 100%;
+    background-color: white;
+    color: black;
+}
+
+.bottom__end-items {
+    display: flex;
+    margin-left: 22%;
+}
+
+.bottom__end-items--notification {
+    text-decoration: none;
+    max-width: 100%;
+    margin: 40px 0;
+    color: white;
+}
+
+.bottom__end-items--border {
+    border:1px solid #d5d4d4;
+    background-color: white;
+    margin: 40px;
+    height: 20px;
+}
+
+.bottom__end--logo {
+    display: flex;
+    margin-top: 30px;
+}
+
+.bottom__end--logo-hearder {
+   margin-right: 40px;
+}
+
+.bottom__end--logo-hearder-img {
+    width: 230px;
+    border-radius: 4px;
+}
+
+.bottom__end--logo-hearder-img:hover {
+    border: 1px solid #ededed;
+    box-shadow: 1px 1px 1px 2px rgb(133, 232, 245);
+}
+
+.bottom__end--logo-hearder-group1 {
+    width: 200px;
+    margin: 10px 0;
+    border-radius: 4px;
+    height: 86px;
+    position: relative;
+    bottom: 8px;
+}
+
+.bottom__end--logo-items {
+    margin: 20px 0 40px 0;
+}
+
+.bottom__end--address {
+    padding:0 60px 50px 60px;
+    color: white;
+    line-height: 1.5;
+}
+
+.vanh__bottom-them {
+    display: flex;
+    max-width: 100%;
+    padding: 50px;
+    background-color: #ededed;
+}
+
+.vanh__bottom-them-product {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.vanh__bottom-them-product-one {
+    margin-left: 12%;
+}
+
+.vanh__bottom-them-product-one ul{
+    text-align: left;
+    margin-top: 10px;
+    list-style-type: none;
+    font-size: 16px;
+    line-height: 2;
+    cursor: pointer;
+}
+
+.vanh__bottom-them-product-one ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.vanh__bottom-them-product-one ul a:hover {
+    color: #666;
+}
+
+.vanh__bottom-them-product-one ul li:hover {
+    color: #666;
+}
+
+.vanh-icon {
+    display: flex;
+    max-width: 100%;
+    margin-left: 100px;
+}
+
+.vanh-icon img {
+    margin: 20px 10px 0 10px;
+    font-size: 40px;
+}
+
+.vanh-icon-three  {
+    position: relative;
+    bottom: 3px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.vanh-icon-five {
+    position: relative;
+    bottom: 4px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.vanh_bottom-end {
+    border: 1px solid black;
+    width: 100%;
+    max-width: 100%;
+    color: white;
+    background-color: #3a3b3d;
+}
+
+    </style>
+</head>
+<body>
+    <section class="product ">
+        <div class="container ">
+            <div class="product-content row">
+                <div class="product-content-left row">
+                    <div class="product-content-left-big-img">
+                        <!-- <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c75b24397a1847a9b45fad0c00da4fb9_9366/Cap_White_HB6615_01_standard.jpg" alt="mu1"> -->
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                        </div>
+                        <img id="myImg" src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b6c348e145334e9ea962a8e3000afff7_9366/Santiago_Lunch_Bag_Black_CJ9045_01_standard.jpg" alt="mu1">
+                    </div>
+                    <div class="product-content-left-small-img ">
+                        <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0e9abf05570e4b3f850fa8e30009b917_9366/Santiago_Lunch_Bag_Black_CJ9045_02_standard.jpg" alt="">
+                        <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/89b75fedbd6048d2a268a8e3000bd525_9366/Santiago_Lunch_Bag_Black_CJ9045_04_standard.jpg" alt="">
+                    </div>
+                </div>
+                <div class="product-content-right">
+                    <div class="product-content-right-product-name ">
+                        <p>Originals</p>
+                        <h1>SANTIAGO LUNCH BAG</h1>
+                    </div>
+                    <div class="product-content-right-product-price">
+                        <p>Price: 52.32$</p>
+                    </div>
+                    <div class="product-content-right-product-name">
+                        <p>Black</p>
+                    </div>
+                    <div class="product-content-right-product-size">
+                        <p style="font-weight: bold; font-size: 20px;">Size:</p>
+                        <div class="size">
+                            <button class="size-button">S</button>
+                            <button class="size-button">M</button>
+                            <button class="size-button">L</button>
+                            <button class="size-button">X</button>
+                            <button class="size-button">XL</button>
+                        </div>
+                    </div>
+                    <div class="quantity">
+                        <p style="font-weight: bold;">Quantity:</p>
+                        <input type="number" min="1" value="1">
+                    </div>
+                    <!-- <p style="color: red;">Please select your size</p> -->
+                    <div class="product-content-right-product-button">
+                        <button><i class="fa-sharp fa-solid fa-bag-shopping"></i><p>ADD TO CART</p></button>
+                    </div>
+                     <div class="product-content-right-product-icon">
+                        <div class="product-content-right-product-icon-item">
+                            <li>CHAT WITH CONSULTANT HERE OR ORDER THROUGH HOTLINE 0971710215</li>
+                        </div>
+                        <div class="product-content-right-product-icon-item">
+                            <li>ONLINE SHOPPING - FREE REFUND IN STORE FOR 7 DAYS</li>
+                        </div>
+                        <div class="product-content-right-product-icon-item">
+                            <li>FREE RETURN IN STORE WITHIN 3 DAYS</li>
+                        </div>
+                    </div>
+                    <div class="product-content-right-product-bottom">
+                        <div class="product-content-right-product-bottom-top">
+                            &#8744;
+                        </div>
+                        <div class="product-content-right-product-bottom-content-big">
+                            <div class="product-content-right-product-bottom-content-title row">
+                                <div class="product-content-right-product-bottom-content-title-item description">
+                                    <h1>Description</h1>
+                                </div>
+                                <div class="product-content-right-product-bottom-content-title-item details">
+                                    <h1>Details</h1>
+                                </div>
+                               
+                            </div>
+                            <div class="product-content-right-product-bottom-content">
+                                <div class="product-content-right-product-bottom-content-description">
+                                    <h1>A TREFOIL BAG TO TOTE FOOD AND DRINKS.</h1>
+                                    <p>This lunch bag has a classic adidas Originals look with contrast piping and a Trefoil logo. It has a lined main compartment that helps keep food and drinks cold and a mesh slip-in pocket on the back for dry items.</p>
+                                </div>
+                                <div class="product-content-right-product-bottom-content-details">
+                                    <ul>
+                                        <li>Dimensions: 7" x 4.5" x 11"</li>                     
+                                        <li>100% polyester  </li>
+                                        <li>Fully padded</li>
+                                        <li>Product color: Black</li>
+                                        <li>Product code: CJ9045</li>
+                                       </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- -------------product-related---------------- -->
+    <div id="wrapper">
+        <div class="headline">
+            <h3 class="khung-item">YOU MAY ALSO LIKE</h3>
+        </div>
+        <ul class="products">
+            <li>
+                <div class="products-item">
+                    <div class="product-top">
+                        <a href="" class="product-thumb">
+                            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5634db8a497c467f9af0ae7c0188362b_9366/Trefoil_2.0_Backpack_White_GA7175_01_standard.jpg" alt="">
+                        </a>
+                        <a href="" class="buy-now">Buy Now</a>
+                        <!--mua ngay-->
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Originals</a>
+                        <!--chỉnh sửa lại tên-->
+                        <a href="" class="product-name">Trefoil 2.0 Backpack Bag</a>
+                        <!--sửa lại giá-->
+                        <div class="product-price">27$</div>
+                    </div>
+                </div>
+            </li> 
+            <!--2-->
+            <li>
+                <div class="products-item">
+                    <div class="product-top">
+                        <a href="" class="product-thumb">
+                            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e10c0b4d404a4ec78ee8aefb000917ed_9366/Saturday_Backpack_Black_GB4317_01_standard.jpg" alt="">
+                        </a>
+                        <a href="" class="buy-now">BUY Now</a>
+                        <!--mua ngay-->
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Training</a>
+                        <!--chỉnh sửa lại tên-->
+                        <a href="" class="product-name">Saturday Backpack Bag</a>
+                        <!--sửa lại giá-->
+                        <div class="product-price">42$</div>
+                    </div>
+                </div>
+            </li>
+            <!--3-->
+            <li>
+                <div class="products-item">
+                    <div class="product-top">
+                        <a href="" class="product-thumb">
+                            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/27b84dabc9ce445889b8af4c011fcdcd_9366/Saturday_Backpack_Silver_GB4318_01_standard.jpg" alt="">
+                        </a>
+                        <a href="" class="buy-now">Buy Now</a>
+                        <!--mua ngay-->
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Training</a>
+                        <!--chỉnh sửa lại tên-->
+                        <a href="" class="product-name">Saturday 2.1 Backpack Bag</a>
+                        <!--sửa lại giá-->
+                        <div class="product-price">53.6$</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="products-item">
+                    <div class="product-top">
+                        <a href="" class="product-thumb">
+                            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ecedd7db35344a0dbf48aca1003e86f4_9366/Classic_3-Stripes_Backpack_White_EX6510_01_standard.jpg" alt="">
+                        </a>
+                        <a href="" class="buy-now">Buy Now</a>
+                        <!--mua ngay-->
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Training</a>
+                        <!--chỉnh sửa lại tên-->
+                        <a href="" class="product-name">Classic 3-Stripes Backpack Bag</a>
+                        <!--sửa lại giá-->
+                        <div class="product-price">41.89$</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="products-item">
+                    <div class="product-top">
+                        <a href="" class="product-thumb">
+                            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e29a12c45f354cd8bb06ae79007a80d6_9366/Classic_Backpack_Grey_HM1709_01_standard.jpg" alt="">
+                        </a>
+                        <a href="" class="buy-now">Buy Now</a>
+                        <!--mua ngay-->
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Kids Unisex • Originals</a>
+                        <!--chỉnh sửa lại tên-->
+                        <a href="" class="product-name">Classic Backpack Bag</a>
+                        <!--sửa lại giá-->
+                        <div class="product-price">23.58$</div>
+                    </div>
+                </div>
+            </li>
+            <!--16-->
+            <li>
+                <div class="products-item">
+                    <div class="product-top">
+                        <a href="" class="product-thumb">
+                            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/18c01f07a13c4a5fbd78ae4a012e005e_9366/adidas_Adventure_Backpack_Small_Black_HL6759_01_standard.jpg" alt="">
+                        </a>
+                        <a href="" class="buy-now">BUY Now</a>
+                        <!--mua ngay-->
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Originals</a>
+                        <!--chỉnh sửa lại tên-->
+                        <a href="" class="product-name">Adidas Adventure Bag</a>
+                        <!--sửa lại giá-->
+                        <div class="product-price">43.65$</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="products-item">
+                    <div class="product-top">
+                        <a href="" class="product-thumb">
+                            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/53c1a05076d64658a4b3ae6900f8d3b4_9366/adidas_Adventure_Toploader_Backpack_Black_HL6744_01_standard.jpg" alt="">
+                        </a>
+                        <a href="" class="buy-now">BUY Now</a>
+                        <!--mua ngay-->
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Originals</a>
+                        <!--chỉnh sửa lại tên-->
+                        <a href="" class="product-name">Adidas Toploader Bag</a>
+                        <!--sửa lại giá-->
+                        <div class="product-price">73.58$</div>
+                    </div>
+                </div>
+            </li>
+            <!--16-->
+            <li>
+                <div class="products-item">
+                    <div class="product-top">
+                        <a href="" class="product-thumb">
+                            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/17b0d81b947c4c498820aefb000f52b6_9366/Essentials_Sling_Crossbody_Bag_Black_GB4316_01_standard.jpg" alt="">
+                        </a>
+                        <a href="" class="buy-now">BUY Now</a>
+                        <!--mua ngay-->
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Essentials</a>
+                        <!--chỉnh sửa lại tên-->
+                        <a href="" class="product-name">Essentials Sling Bag</a>
+                        <!--sửa lại giá-->
+                        <div class="product-price">43.65$</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+
+    <!-- phan cuoi end -->
+
+    <div class="bottom__end">
+        <div class="vanh__bottom-them">
+            <div class="vanh__bottom-them-product-one">
+                    <span class="vanh__bottom-them-product">
+                        PRODUCTS
+                    </span>
+                        <ul>
+                            <li><a href="http://127.0.0.1:5500/shoe2.html">- Shoes Men</a></li>
+                            <li><a href="http://127.0.0.1:5500/bag.html">- Bag Adidas</a></li>
+                            <li><a href="http://127.0.0.1:5500/clother.html">- Clothes Men fashion</a></li>
+                            <li><a href="http://127.0.0.1:5500/shoe2.html">- Cap/Hat Adidas</a></li>
+                            <li><a href="http://127.0.0.1:5500/accessory.html">- Accessory Sports</a></li>
+                            <li>- Products New</li>
+                            <li>- Products Hot</li>
+                            <li>- All Products</li>
+                        </ul>
+            </div>
+
+            <div class="vanh__bottom-them-product-one">
+                <span class="vanh__bottom-them-product">
+                    FOLLOW US
+                </span>
+                  <ul class="vanh-icon">
+                    <li><img class="vanh-icon-one" src="https://dongphucphuongthao.vn/wp-content/uploads/2022/06/fb.png"></li>
+                    <li><img class="vanh-icon-two" src="https://dongphucphuongthao.vn/wp-content/uploads/2022/06/g.png"></li>
+                    <li><img class="vanh-icon-three" src="https://dongphucphuongthao.vn/wp-content/uploads/2022/06/insta.png" ></li>
+                    <li><img class="vanh-icon-four" src="https://dongphucphuongthao.vn/wp-content/uploads/2022/06/yt.png"></li>
+                    <li><img class="vanh-icon-five" src="https://dongphucphuongthao.vn/wp-content/uploads/2022/06/p.png"></li>
+                    <li><img class="vanh-icon-six" src="https://dongphucphuongthao.vn/wp-content/uploads/2022/06/tiktok.png"></li>
+                  </ul>  <br><br>
+                  <div class="bottom__end--logo">
+                    <a href="" class="bottom__end--logo-hearder">
+                        <img class="bottom__end--logo-hearder-img" src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/42008041469/original/Mo9gDy2XMZLppkUw4sWCsYV-lk65HqqgQw.gif?1539077990" alt="">
+                    </a>
+                    <img class="bottom__end--logo-hearder-group1" src="https://cdn.khungthanh.com/files/tv/tennishd.png" alt="">
+                </div>
+            </div>
+
+            <div class="vanh__bottom-them-product-one">
+                <span class="vanh__bottom-them-product">
+                    SUPPORT
+                </span>
+                    <ul>
+                        <li>- Customer Service Help</li>                
+                        <li>- Store search engine</li>
+                        <li>- Size Chart</li>
+                        <li>- Pay</li>
+                        <li>- Delivery</li>
+                        <li>- Returns & Refunds</li>
+                        <li>- Promotion</li>
+                        <li>- Sitemap</li>
+                    </ul>
+            </div>
+
+            
+        </div>
+
+        <div class="vanh_bottom-end">
+            <div class="bottom__end-items">
+               <a class="bottom__end-items--notification" href="">PRIVACY POLICY</a>
+               <div class="bottom__end-items--border"></div>
+               <a class="bottom__end-items--notification" href="">OPERATION REGULATIONS</a>
+               <div class="bottom__end-items--border"></div>
+               <a class="bottom__end-items--notification" href="">SHIPPING POLICY</a>
+               <div class="bottom__end-items--border"></div>
+               <a class="bottom__end-items--notification" href="">REFUND AND REFUND POLICY</a>
+            </div>
+            
+            <div class="bottom__end--address">
+                Address: No. 8A, Ton That Thuyet Street, My Dinh 2 Ward, Cau Giay District, Hanoi City, Vietnam. Support call center: 19001221 - Email: group1sport@gmail.com
+                Responsible for Content Management: Group1 Sport - Contact phone: 024 6783210 (ext 4678)
+                Enterprise code: 0106773786 first issued by Hanoi Department of Planning and Investment on October 20, 2015
+                © 2015 - Copyright belongs to G1 Sport Co., Ltd.
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+    const description = document.querySelector(".description")
+    const details = document.querySelector(".details")
+    if(description){
+        description.addEventListener("click", function(){
+            document.querySelector(".product-content-right-product-bottom-content-details").style.display = "none"
+            document.querySelector(".product-content-right-product-bottom-content-description").style.display = "block"
+        })
+    }
+    if(details){
+        details.addEventListener("click", function(){
+            document.querySelector(".product-content-right-product-bottom-content-details").style.display = "block"
+            document.querySelector(".product-content-right-product-bottom-content-description").style.display = "none"
+        })
+    }
+    const button = document.querySelector (".product-content-right-product-bottom-top")
+    if(button){
+        button.addEventListener("click", function(){
+            document.querySelector(".product-content-right-product-bottom-content-big").classList.toggle("activeB")
+        })
+    }
+</script>
+
+<!-- phan chon size -->
+
+<script>
+    const sizeButtons = document.querySelectorAll('.size-button');
+
+sizeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    sizeButtons.forEach(btn => {
+      btn.classList.remove('selected');
+    });
+    button.classList.add('selected');
+  });
+});
+
+</script>
+
+<!-- phan xem full man hinh -->
+
+<script>
+   
+    // Lấy các phần tử cần thiết từ DOM
+const modal = document.getElementById("myModal");
+const img = document.getElementById("myImg");
+const modalImg = document.getElementById("img01");
+const closeBtn = document.getElementsByClassName("close")[0];
+
+// Khi người dùng click vào ảnh, hiển thị modal và đặt ảnh vào modal
+img.onclick = function () {
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  document.body.style.overflow = "hidden"; // Ẩn scrollbar của body
+}
+
+// Khi người dùng click vào nút đóng, ẩn modal và cho phép hiển thị lại scrollbar của body
+closeBtn.onclick = function () {
+  modal.style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+// Khi người dùng click vào vùng bên ngoài của modal, ẩn modal và cho phép hiển thị lại scrollbar của body
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+}
+
+// Bắt sự kiện nhấn phím để đóng modal
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+});
+
+</script>
+</html>
+
+
